@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     function Smart(model, year, price, memory, display, protect) {
+        this.model = model;
+        this.year = year;
+        this.price = price;
+        this.memory = memory;
+        this.display = display;
+        this.protect = protect;
+
+        
+        this.show = function () {
+          for (let i in this) {
+            if (typeof this[i] != 'function')
+             console.log(`${i}: ${this[i]}`);
+          }
+        }
+            console.log('\n');
+      };
+
+    
+
+     
+      let Smart1 = new Smart('Samsung Galaxy S22 Ultra', '2022', '1210$', '1TB', '6.8', 'IP68');
+     
+      Smart1.show();
+
+    
+      let Smart2 = new Smart('ASUS ROG Phone 5s ZS676KS', '2021', '1267$', '256GB', '6.78', 'IP68');
+     
+      Smart2.show();
+
+      
+      let Smart3 = new Smart('OnePlus 10 Pro', '2022', '1167$', '256Gb', '6.7', 'IP68');
+     
+      Smart3.show();       
+  </script>
+</body>
+</html>

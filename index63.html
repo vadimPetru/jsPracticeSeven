@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index 63</title>
+</head>
+<body>
+  <script>
+
+  
+        function createOAuthString(host, clientID, scope) {
+        return `${host}/login/oauth/authorize?client_id=${clientID}&scope=${scope}`;
+      }
+        function inputID() {
+        const ID = prompt('Введите свой clientID', 'vadimPetru');
+        if (ID.trim() == "")
+           return `vadimPetru`;
+        return ID;
+      }
+        console.log(`dinamic link:
+       ${createOAuthString('https://github.com', inputID(), 'repo,user')}`);
+    
+   
+  </script>
+</body>
+</html>

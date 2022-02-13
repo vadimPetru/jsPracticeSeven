@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index62</title>
+</head>
+<body>
+  <script>
+      function isNumber(value) {
+            if(value == null)
+               alert("Была нажата кнопка отмена:")
+           else if(value.trim() === '')
+               alert('Введите значения:');
+           else if ( value.replace(/\s/g, '').length === 0 || isNaN(value)) {
+            alert('Неверный ввод, попробуйте ввести число');
+            return false;
+          }
+          else
+            return true;
+        }
+        const mult = (x, y) => x * y;
+        let x, y;
+        let max = Number.MAX_SAFE_INTEGER;
+        do {
+          x = prompt('Введите число x: ', '');
+        } while (!isNumber(x))
+        do {
+          y = prompt('Введите число y: ', '');
+        } while (!isNumber(y))
+        if (Number(x) > max || Number(y) > max || mult(Number(x), Number(y)) > max)
+          alert('Внутри JavaScript число представлено в виде 64-битного формата IEEE-754. Ваше число слишком большое, оно переполнило 64-битное хранилище.');
+        else if(!Number.isInteger(mult(Number(x), Number(y))))
+        {
+          const string = `The multiplying of ${Number(x)} and ${Number(y)} is ${mult(Number(x), Number(y)).toPrecision(10)}`;
+          console.log(string);
+        }
+        
+        else {
+          const string = `The multiplying of ${Number(x)} and ${Number(y)} is ${mult(Number(x), Number(y))}`;
+          console.log(string);
+        }
+  </script>
+</body>
+</html> 
